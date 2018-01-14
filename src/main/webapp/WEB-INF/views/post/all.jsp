@@ -23,7 +23,7 @@
     <div class="container">
 
         <!-- Page Heading/Breadcrumbs -->
-        <h1 class="mt-4 mb-3">List of Citizens <small>in Groefnia</small></h1>
+        <h1 class="mt-4 mb-3">List of Posts </h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -36,29 +36,29 @@
         <div class="row">
 	        
             <div class="col-lg-6">
-            <form action="<spring:url value ="/person/add"/>">
-			    <input type="submit" value="Register as Gorefnish citizen!" />
+            <form action="<spring:url value ="/post/add"/>">
+			    <input type="submit" value="Write a post!" />
 			</form>
 			<br>
             <table class="tg">
 			  <tr>
 			    <th class="tg-9hbo">Id</th>
-			    <th class="tg-9hbo">Name</th>
-			    <th class="tg-9hbo">Surname</th>
-			    <th class="tg-9hbo">Description</th>
+			    <th class="tg-9hbo">title</th>
+			    <th class="tg-9hbo">Content</th>
+			    <th class="tg-9hbo">Tags</th>
 			    <th class="tg-9hbo">Age</th>
 			    <th class="tg-9hbo">Actions</th>
 			  </tr>
-                <c:forEach items="${persons}" var="person">
-					<c:if test="${not empty person}">
+                <c:forEach items="${posts}" var="post">
+					<c:if test="${not empty post}">
 					<tr>
-						<td class="tg-yw4l"><i><c:out value="${person.id}" /></i></td>
-						<td class="tg-yw4l"><c:out value="${person.firstName}" /></td>
-						<td class="tg-yw4l"><c:out value="${person.lastName}" /></td>
-						<td class="tg-yw4l"><c:out value="${person.description}" /></td>
-						<td class="tg-yw4l"><c:out value="${person.age}" /></td>
-						<td class="tg-yw4l"><a href="<c:url value="/person/${person.id}"/>">Update</a>
-											<a href="<c:url value="/person/delete/${person.id}"/>">Delete</a></td>
+						<td class="tg-yw4l"><i><c:out value="${post.id}" /></i></td>
+						<td class="tg-yw4l"><c:out value="${post.title}" /></td>
+						<td class="tg-yw4l"><c:out value="${post.content}" /></td>
+						<td class="tg-yw4l"><c:out value="${post.description}" /></td>
+						<td class="tg-yw4l"><c:out value="${post.age}" /></td>
+						<td class="tg-yw4l"><a href="<c:url value="/post/${post.id}"/>">Update</a>
+											<a href="<c:url value="/post/delete/${post.id}"/>">Delete</a></td>
 					</tr>			
 					</c:if>
 				</c:forEach>

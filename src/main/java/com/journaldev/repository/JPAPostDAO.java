@@ -8,10 +8,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.journaldev.model.Person;
+import com.journaldev.model.Post;
 
-@Repository(value = "personDAO")
-public class JPAPersonDAO implements PersonDAO{
+@Repository(value = "postDAO")
+public class JPAPostDAO implements PostDAO{
 	
     private EntityManager em = null;
 
@@ -24,25 +24,25 @@ public class JPAPersonDAO implements PersonDAO{
     }
 
     @Transactional(readOnly = true)
-	public Person getPersonById(long id) {
-		return em.find(Person.class, id);
+	public Post getPostById(long id) {
+		return em.find(Post.class, id);
 	}
     
     @Transactional(readOnly = true)
     @SuppressWarnings("unchecked")
-	public List<Person> getPersonList() {
-    	return em.createQuery("SELECT p FROM Person p ORDER BY p.id").getResultList();
+	public List<Post> getPostList() {
+    	return em.createQuery("SELECT p FROM Post p ORDER BY p.id").getResultList();
 	}
 
     @Transactional(readOnly = false)
-	public void savePerson(Person person) {
-    	em.merge(person);
+	public void savePost(Post post) {
+    	em.merge(post);
 	}
 
     @Transactional(readOnly = false)
-	public void deletePerson(Person person) {
+	public void deletePost(Post post) {
     	// If we don't merge first, it has a temporal transactional object
-		em.remove(em.merge(person));	
+		em.remove(em.merge(post));	
 	}
 
 }

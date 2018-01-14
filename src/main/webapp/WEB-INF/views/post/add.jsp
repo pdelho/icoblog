@@ -29,21 +29,23 @@
             <li class="breadcrumb-item">
                 <a  href="<spring:url value ="/"/>">Home</a>
             </li>
-            <li class="breadcrumb-item active"><a href="<spring:url value ="/persons"/>">List of citizens</a></li>
+            <li class="breadcrumb-item active"><a href="<spring:url value ="/posts"/>">List of posts</a></li>
         </ol>
 
         <!-- Intro Content -->
         <div class="row">
-	        <spring:url value="/person" var="userActionUrl" />
+	        <spring:url value="/post" var="userActionUrl" />
         	<form action="${userActionUrl}" method="post">
-	            <label for="first_name">First name</label>
-		        <p align ="right"><input type="text" name="firstName" placeholder="Pablo"  /></p>
+	            <label for="title">Title</label>
+		        <p align ="right"><input type="text" name="title" placeholder="Título"  /></p>
 
-		        <label for="last_name">Last name</label>
-		        <p align ="right"><input type="text" name="lastName" placeholder="del Hoyo" />  </p>    
+		        <!-- <label for="content">Content</label>
+		        <p align ="right"><input type="textarea" name="content" placeholder="Escribe un Post" />  </p>  -->
+		        <label for="content">Content</label>
+		       <textarea cols="50" rows="4" name="content" placeholder="Escribe un Post"></textarea>   
 
-		        <label for="age">Age <span class="req"></span></label>
-		           <p align ="right"><input type="number" name="age" placeholder="25" /></p>
+		        <!-- <label for="age">Age <span class="req"></span></label>
+		           <p align ="right"><input type="number" name="age" placeholder="25" /></p> -->
 		              
 		       <div class="divider"></div>
 

@@ -45,16 +45,16 @@ public class NavigationController {
 //	}
 	
 	
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact(Model model) {
-		return "contact";
-
-	}
-	
-	@RequestMapping(value = "/cv", method = RequestMethod.GET)
-	public String cv(Model model) {
-		return "cv";
-
-	}
+//	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+//	public String contact(Model model) {
+//		return "contact";
+//
+//	}
+//	
+//	@RequestMapping(value = "/cv", method = RequestMethod.GET)
+//	public String cv(Model model) {
+//		return "cv";
+//
+//	}
 
 }

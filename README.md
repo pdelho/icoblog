@@ -4,26 +4,13 @@
 
 This application is a cloud-enabled, mobile-ready, persistent remote storage based on Spring, which has
 
-  - A Fancy frontent based on Bootstrap v4
-  - A Champions League Simulator!
-  - Coding exercises
-  - A Contact Form
-  - Information about myself
-  - A cool section of my own country and learn languages!
-  - Connection to a remote database
+ - Blog with CRUD functionalities
 
 # New Features!
 
-  - Bootsrap framework
-  - Some jQuery exercises included
-  - CV
-  - Champions League Simulator: make your own prediction about the group stage results and we will calculate how many chances has a team to face the rest of them
-
 
 You can also:
-  - Read information about Groefnia, an ~~imaginary~~ amazing country of Europe
-  - Register as a Gorefnish citizen, read, update or delete your information ([CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) functionalities in a persistant database)
-  - Send a form to contact me or know where do I live
+) functionalities in a persistant database)
   - Visit other cool websites
 
 # Tech
@@ -86,9 +73,7 @@ postgresql://localhost:5432/postgres
 ```
 * Execute in your database the query:
 ```sh
-initTablePersons.sql
-initTableTeams.sql
-(Optional) initData.sql
+initTablePosts.sql
 ```
 ###### 4.2 Remote:
 * Go to https://dashboard.heroku.com/apps/your-app 
@@ -100,9 +85,7 @@ postgresql://host:5432/postgres?user=user&password=pass&sslmode=require
 * Execute in your database the query:
 ```sh
 heroku pg:psql
-initTablePersons.sql
-initTableTeams.sql
-(Optional) initData.sql
+initTablePosts.sql
 ```
 ##### 5- Configure your application.properties
 * Firslty, open your setenvironment.bat and set the path of your local-application.properties
@@ -135,15 +118,8 @@ http://your-app-name.herokuapp.com/
 ```
 ### ToDos
 
- - Write MORE Tests
- - Add Night Mode
- - Validation
- - AngularJS Exercises
- - Travelmap
- - Postgresql with two tables
- - Request DELETE: https://stackoverflow.com/questions/13629653/using-put-and-delete-methods-in-spring-mvc
- - Ajax to handle translation
- - Javascript google maps functionality: how far are you from groefnia?
+- Register users
+- Give actions depending on the user
 
 
 

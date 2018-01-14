@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "persons")
-public class Person implements Serializable {
+@Table(name = "posts")
+public class Post implements Serializable {
 	
 	/**
 	 * 
@@ -22,11 +22,11 @@ public class Person implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	@Column(name = "firstName")
-	private String firstName;
- 
-	@Column(name = "lastName")
-	private String lastName;
+	@Column(name = "title")
+	private String title;
+
+	@Column(name = "content")
+	private String content;
 	
 	@Column(name = "description")
 	private String description;
@@ -34,20 +34,20 @@ public class Person implements Serializable {
 	@Column(name = "age")
 	private int age;
 	
-	protected Person(){
+	protected Post(){
 		
 	}
 	
-	public Person (String firstName, String lastName, String description, int age){
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public Post (String title, String content, String description, int age){
+		this.title = title;
+		this.content = content;
 		this.description = description;
 		this.age = age;
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("Person[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
+		return String.format("Post[id=%d, title='%s', content='%s']", id, title, content);
 	}
 	
 
@@ -59,22 +59,22 @@ public class Person implements Serializable {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getContent() {
+		return content;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setContent(String content) {
+		this.content = content;
 	}
-
+	
 	public String getDescription() {
 		return description;
 	}
